@@ -1,6 +1,6 @@
 ---
 title: "statusDetails resource type"
-description: "Describes the status of the provisioning event and the associated errors."
+description: "Describes the status of the provisioning event and the associated errors when status is set to failure."
 localization_priority: Normal
 author: "davidmu1"
 ms.prod: "ms.prod"
@@ -11,7 +11,7 @@ doc_type: "resourcePageType"
 
 [!INCLUDE [beta-disclaimer](../../includes/beta-disclaimer.md)]
 
-Describes the status of the provisioning event and the associated errors.
+Describes the status of the provisioning event and the associated errors when status is set to failure. The status is inherited from [statusBase](../resources/statusBase.md). 
 
 ## Properties
 
@@ -22,6 +22,7 @@ Describes the status of the provisioning event and the associated errors.
 |errorCode|String|Unique error code if any occurred.|
 |reason|String|Summarizes the status and describes why the status happened.|
 |recommendedAction|String|Provides the resolution for the corresponding error.|
+|status|String|Possible values are: `success`, `failure`, `skipped`, `unknownFutureValue`.|
 
 ## JSON representation
 
@@ -42,7 +43,8 @@ The following is a JSON representation of the resource.
   "errorCategory": "String",
   "errorCode": "String",
   "reason": "String",
-  "recommendedAction": "String"
+  "recommendedAction": "String",
+   "status": "failure"
 }
 ```
 
